@@ -9,7 +9,7 @@ app = flask(__name__)
 def index():
   return render_template('index.html')
 
-@app.route('/predict')
+@app.route('/predict' methods = [post])
 
 def predict():
   BHK = eval(request.form.get("BHK"))
@@ -30,7 +30,11 @@ def housepricepredict():
   Furnishing = eval(request.form.get("Furnishing"))
   
   url = "delhi property price for ml project1.csv"
-  df = pd.read_csv(url)
+  data = pd.read_csv(url)
+  X = data.drop(["Price"],axis = "columns")
+  y = data["Price"]
+  
+  arr = model.predict([[BHK, Bathroom, Parking, Per_sqft, Furnishing]])
 
 
 
