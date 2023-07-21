@@ -34,9 +34,12 @@ def housepricepredict():
   X = data.drop(["Price"],axis = "columns")
   y = data["Price"]
   
+  model = LinearRegression()
+  model.fit(X,y)
+  
   arr = model.predict([[BHK, Bathroom, Parking, Per_sqft, Furnishing]])
 
-
+  return render_template("predict.html", data1 = arr[0])
 
 
 if __name__ == '__main__':
