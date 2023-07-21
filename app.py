@@ -29,7 +29,7 @@ def housepricepredict():
   Per_Sqft = eval(request.form.get("Per_Sqft"))
   Furnishing = eval(request.form.get("Furnishing"))
   
-  url = "delhi property price for ml project1.csv"
+  url = "delhi house price ML.csv"
   data = pd.read_csv(url)
   X = data.drop(["Price"],axis = "columns")
   y = data["Price"]
