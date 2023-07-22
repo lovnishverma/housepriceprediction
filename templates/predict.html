@@ -1,30 +1,35 @@
 <html>
-  
-  
   <body>
     <h1>
-      
       "hello from flask index page"
-      <br>
-      <form action = "/predict" method = "post">
-        
+      <br />
+      <form action="/predict" method="post">
         No. of BHK interested in :
-        
-        <input type = "number" name = "BHK" placeholders = "enter no."><br>
+
+        <input type="number" name="BHK" placeholders="enter no." /><br />
         No. of bathrooms required :
-        
-        <input type = "number" name = "Bathrooms" placeholders = "enter no."><br>
+        <input type="number" name="Bathrooms" placeholders="enter no." /><br />
         Parking space required :
-        <input type = "number" name = "Parking_space" placeholders = "enter no. of vehicles"><br>
+        <input
+          type="number"
+          name="Parking_space"
+          placeholders="enter no. of vehicles"
+        /><br />
         enter price per sqft:
-        <input type = "number" name = "price_per_sqft" placeholders = "enter amount"><br>
-        Furnishing required
-        <input type = "number" name = "Furnished_semifurnished_unfurnished" placeholders = "enter "
+        <input
+          type="number"
+          name="price_per_sqft"
+          placeholders="enter amount"
+        /><br />
+        Furnishing required:
+
+        <input
+          type="number"
+          name="Furnished_semifurnished_unfurnished"
+          placeholders="enter "
+        /><br />
+        <input type="button" value="submit" />
       </form>
-         
     </h1>
-    
-  
-  
   </body>
 </html>

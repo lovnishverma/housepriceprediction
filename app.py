@@ -1,4 +1,4 @@
-from flask import *
+from flask import Flask
 import pandas as pd
 from sklearn.linear_model import LinearRegression
 
@@ -37,9 +37,10 @@ def housepricepredict():
   model = LinearRegression()
   model.fit(X,y)
   
-  arr = model.predict([[BHK, Bathroom, Parking, Per_sqft, Furnishing]])
-
-  return render_template("predict.html", data1 = arr[0])
+  newdata = model.predict([[BHK, Bathroom, Parking, Per_sqft, Furnishing]])
+  result = arr
+  
+  return render_template("predict.html", data1 = newdata[0])
 
 
 if __name__ == '__main__':
