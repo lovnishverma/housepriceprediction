@@ -3,9 +3,15 @@
 <head>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      text-align: center;
-      padding: 20px;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://cdn.glitch.global/325e2a4a-c11d-4cdd-ac23-467e5b69b5a3/house-3.gif?v=1690012032533');
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
     }
     form {
       margin: 20px auto;
@@ -37,8 +43,7 @@
   </style>
 </head>
 <body>
-  <h1>
-    "hello from flask index page"
+  <h2>
     <br />
     <form action="/predict" method="post">
       No. of BHK interested in :
@@ -55,10 +60,12 @@
 
       Furnishing required:
       <input type="number" name="Furnishing" placeholder="enter" required /><br />
-
-      <input type="submit" value="Predict" />
+<center>
+  <input type="submit" value="Predict" /></center>
     </form>
+    {% if data1 is defined %}
     <center>Rs. {{ data1 }} -/ only</center>
-  </h1>
+{% endif %}
+  </h2>
 </body>
 </html>
