@@ -1,36 +1,64 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <h1>
-      "hello from flask index page"
-      <br />
-      <form action="/predict" method="post">
-        No. of BHK interested in :
+<head>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+    }
+    form {
+      margin: 20px auto;
+      max-width: 400px;
+      border: 1px solid #ccc;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    input[type="submit"] {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    input[type="submit"]:hover {
+      background-color: #45a049;
+    }
+    center {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>
+    "hello from flask index page"
+    <br />
+    <form action="/predict" method="post">
+      No. of BHK interested in :
+      <input type="number" name="BHK" placeholder="enter no." required /><br />
 
-        <input type="number" name="BHK" placeholders="enter no." /><br />
-        No. of bathrooms required :
-        <input type="number" name="Bathroom" placeholders="enter no." /><br />
-        Parking space required :
-        <input
-          type="number"
-          name="Parking"
-          placeholders="enter no. of vehicles"
-        /><br />
-        enter price per sqft:
-        <input
-          type="number"
-          name="Per_Sqft"
-          placeholders="enter amount"
-        /><br />
-        Furnishing required:
+      No. of bathrooms required :
+      <input type="number" name="Bathroom" placeholder="enter no." required /><br />
 
-        <input
-          type="number"
-          name="Furnishing"
-          placeholders="enter "
-        /><br />
-        <input type="Submit" value="Predict" />
-      </form>
-      <center>{{ data1 }}</center>
-    </h1>
-  </body>
+      Parking space required :
+      <input type="number" name="Parking" placeholder="enter no. of vehicles" required /><br />
+
+      Enter price per sqft:
+      <input type="number" name="Per_Sqft" placeholder="enter amount" required /><br />
+
+      Furnishing required:
+      <input type="number" name="Furnishing" placeholder="enter" required /><br />
+
+      <input type="submit" value="Predict" />
+    </form>
+    <center>Rs. {{ data1 }} -/ only</center>
+  </h1>
+</body>
 </html>

@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 import pandas as pd
-from sklearn.linear_model import LinearRegression
+from sklearn.ensemble import RandomForestRegressor
 
 app = Flask(__name__)
 
@@ -28,7 +28,7 @@ def predict():
   X = data.drop(['id', 'Price'], axis='columns')
   y = data["Price"]
   
-  model = LinearRegression()
+  model = RandomForestRegressor()
   model.fit(X,y)
   
   newdata = model.predict([[BHK, Bathroom, Parking, Per_Sqft, Furnishing]])
